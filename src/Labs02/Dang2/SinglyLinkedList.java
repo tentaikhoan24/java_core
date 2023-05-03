@@ -1,5 +1,7 @@
 package Labs02.Dang2;
 
+import Labs02.Dang2.Node;
+
 public class SinglyLinkedList {
     private Integer size = 0;
     public Node head = null;
@@ -88,21 +90,4 @@ public class SinglyLinkedList {
     public void displayTail() {
         System.out.println(tail.value);
     }
-//    public static void main(String[] args) {
-//        SinglyLinkedList sList = new SinglyLinkedList();
-//
-//        //Add nodes to the list
-//        sList.addAtEnd(1);
-//        sList.addAtEnd(2);
-//        sList.addAtEnd(3);
-//        sList.addAtEnd(4);
-//        sList.addAtTop(0);
-//        sList.display();
-//        sList.deleteAtTop();
-//        sList.display();
-//        sList.deleteAtEnd();
-//        sList.display();
-//        sList.displayHead();
-//        System.out.println(sList.getSize());
-//    }
 }

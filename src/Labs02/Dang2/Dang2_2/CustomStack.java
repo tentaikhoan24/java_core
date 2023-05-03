@@ -1,4 +1,6 @@
-package Labs02.Dang2;
+package Labs02.Dang2.Dang2_2;
+
+import Labs02.Dang2.SinglyLinkedList;
 
 public class CustomStack {
     private SinglyLinkedList singlyLinkedList = new SinglyLinkedList();
