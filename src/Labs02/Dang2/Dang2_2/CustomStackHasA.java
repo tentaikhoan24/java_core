@@ -13,6 +13,7 @@ public class CustomStackHasA {
         singlyLinkedList.addAtEnd(value);
     }
 
+    //retrieves and removes the head of this stack
     public void pop() {
         if (isEmpty()){
             System.out.println("Stack is empty!");
@@ -22,6 +23,7 @@ public class CustomStackHasA {
         }
     }
 
+    //retrieves but does not remove the head of this stack
     public void peek() {
         singlyLinkedList.displayTail();
     }

@@ -11,11 +11,13 @@ public class CustomQueueIsA extends SinglyLinkedList {
         addAtEnd(value);
     }
 
+    //retrieves and removes the head of this queue
     public void remove(){
         displayHead();
         deleteAtTop();
     }
 
+    //retrieves but does not remove the head of this queue
     public void element() {
         displayHead();
     }

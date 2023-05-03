@@ -11,6 +11,7 @@ public class CustomStackIsA extends SinglyLinkedList {
         addAtEnd(value);
     }
 
+    //retrieves and removes the head of this stack
     public void pop() {
         if (isEmpty()){
             System.out.println("Stack is empty!");
@@ -20,6 +21,7 @@ public class CustomStackIsA extends SinglyLinkedList {
         }
     }
 
+    // retrieves but does not remove the head of this stack
     public void peek() {
         if (isEmpty()){
             System.out.println("Stack is empty!");

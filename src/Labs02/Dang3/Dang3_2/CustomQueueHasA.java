@@ -16,6 +16,7 @@ public class CustomQueueHasA {
         singlyLinkedList.addAtEnd(value);
     }
 
+    //retrieves and removes the head of this queue
     public void remove() {
         if (singlyLinkedList.isEmpty()) {
             System.out.println("Queue is empty!");
@@ -25,6 +26,7 @@ public class CustomQueueHasA {
         }
     }
 
+    //retrieves but does not remove the head of this queue
     public void element() {
         if (singlyLinkedList.isEmpty()) {
             System.out.println("Queue is empty!");
