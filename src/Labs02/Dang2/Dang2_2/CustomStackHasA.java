@@ -4,7 +4,6 @@ import Labs02.Dang2.SinglyLinkedList;
 
 public class CustomStackHasA {
     private SinglyLinkedList singlyLinkedList = new SinglyLinkedList();
-    private Integer size = 0;
 
     public CustomStackHasA(Integer value){
         singlyLinkedList.addAtTop(value);
@@ -12,7 +11,6 @@ public class CustomStackHasA {
 
     public void push(Integer value) {
         singlyLinkedList.addAtEnd(value);
-        size++;
     }
 
     public void pop() {
@@ -21,7 +19,6 @@ public class CustomStackHasA {
         } else {
             singlyLinkedList.displayTail();
             singlyLinkedList.deleteAtEnd();
-            size--;
         }
     }
 
@@ -34,15 +31,11 @@ public class CustomStackHasA {
     }
 
     public Integer getSize() {
-        return size;
+        return singlyLinkedList.getSize();
     }
 
     public Boolean isEmpty() {
-        if (size == 0){
-            return true;
-        } else {
-            return false;
-        }
+        return singlyLinkedList.isEmpty();
     }
 
     public static void main(String[] args) {

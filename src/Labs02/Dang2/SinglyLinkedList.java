@@ -61,7 +61,7 @@ public class SinglyLinkedList {
         }
     }
 
-    public boolean isEmpty() {
+    public Boolean isEmpty() {
         return head == null;
     }
 
@@ -87,9 +87,17 @@ public class SinglyLinkedList {
     }
 
     public void displayHead() {
-        System.out.println(head.value);
+        if (isEmpty()){
+            System.out.println("Singly Linked List is empty");
+        } else{
+            System.out.println(head.value);
+        }
     }
     public void displayTail() {
-        System.out.println(tail.value);
+        if (isEmpty()){
+            System.out.println("Singly Linked List is empty");
+        } else{
+            System.out.println(tail.value);
+        }
     }
 }

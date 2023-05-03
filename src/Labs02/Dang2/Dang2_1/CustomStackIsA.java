@@ -28,7 +28,11 @@ public class CustomStackIsA extends SinglyLinkedList {
         }
     }
 
-    public boolean isEmpty() {
+    public Integer getSize() {
+        return getSize();
+    }
+
+    public Boolean isEmpty() {
         return head == null;
     }
 
