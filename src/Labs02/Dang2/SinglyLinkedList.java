@@ -3,9 +3,12 @@ package Labs02.Dang2;
 import Labs02.Dang2.Node;
 
 public class SinglyLinkedList {
-    private Integer size = 0;
     public Node head = null;
     public Node tail = null;
+
+    public SinglyLinkedList() {
+        head = null;
+    }
 
     public void addAtEnd(Integer value) {
         Node newNode = new Node(value);
@@ -16,7 +19,6 @@ public class SinglyLinkedList {
             tail.next = newNode;
             tail = newNode;
         }
-        size++;
     }
 
     public void addAtTop(Integer value) {
@@ -28,13 +30,12 @@ public class SinglyLinkedList {
             newNode.next = head;
             head = newNode;
         }
-        size++;
     }
 
     public void deleteAtTop(){
         if (head == null){
             System.out.println("Singly Linked List is empty!");
-        } else if (size == 1) {
+        } else if (head == tail) {
             head = null;
             tail = null;
         } else {
@@ -42,13 +43,12 @@ public class SinglyLinkedList {
             head = head.next;
             temp.next = null;
         }
-        size--;
     }
 
     public void deleteAtEnd() {
         if (head == null){
             System.out.println("Singly Linked List is empty!");
-        } else if (size == 1) {
+        } else if (head == tail) {
             head = null;
             tail = null;
         } else {
@@ -59,18 +59,20 @@ public class SinglyLinkedList {
             tail = temp;
             temp.next = null;
         }
-        size--;
     }
 
     public boolean isEmpty() {
-        if (head == null) {
-            return true;
-        }
-        return false;
+        return head == null;
     }
 
     public Integer getSize() {
-        return  size;
+        Integer size = 0;
+        Node temp = head;
+        while (temp != null) {
+            size++;
+            temp = temp.next;
+        }
+        return size;
     }
     public void display() {
         Node current = head;

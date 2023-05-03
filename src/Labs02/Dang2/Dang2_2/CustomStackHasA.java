@@ -2,11 +2,11 @@ package Labs02.Dang2.Dang2_2;
 
 import Labs02.Dang2.SinglyLinkedList;
 
-public class CustomStack {
+public class CustomStackHasA {
     private SinglyLinkedList singlyLinkedList = new SinglyLinkedList();
     private Integer size = 0;
 
-    public CustomStack(Integer value){
+    public CustomStackHasA(Integer value){
         singlyLinkedList.addAtTop(value);
     }
 
@@ -46,7 +46,7 @@ public class CustomStack {
     }
 
     public static void main(String[] args) {
-        CustomStack customStack = new CustomStack(0);
+        CustomStackHasA customStack = new CustomStackHasA(0);
         customStack.push(1);
         customStack.push(2);
         customStack.push(3);
