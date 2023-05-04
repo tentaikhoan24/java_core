@@ -41,15 +41,40 @@ public class BinarySearchTree {
         }
    }
 
-    public static void main(String[] args) {
-        BinarySearchTree binarySearchTree = new BinarySearchTree();
-        binarySearchTree.insert(binarySearchTree.root, 8);
-        binarySearchTree.insert(binarySearchTree.root, 9);
-        binarySearchTree.insert(binarySearchTree.root, 3);
-        binarySearchTree.insert(binarySearchTree.root, 1);
-        binarySearchTree.insert(binarySearchTree.root, 0);
-        System.out.println("Done");
-        System.out.println(binarySearchTree.search(binarySearchTree.root, 1));
-        System.out.println(binarySearchTree.search(binarySearchTree.root, 15));
-    }
+   public Node findMostLeftNode(Node root) {
+        if (root == null) {
+            return null;
+        }
+        Node mostLeftNode = root;
+        while (mostLeftNode.left != null) {
+            mostLeftNode = mostLeftNode.left;
+        }
+        return mostLeftNode;
+   }
+
+   public Node deleteNode(Node root, Integer key) {
+        if (root == null) {
+            return null;
+        }
+        if (key > root.value){
+            root.right = deleteNode(root.right, key);
+        } else if (key < root.value) {
+             root.left = deleteNode(root.left, key);
+        } else {
+            if (root.right == null && root.left == null) { //Node la nut la
+                return null;
+            }
+            if (root.left != null && root.right == null) {//Node co 1 cay con ben trai
+                return root.left;
+            }
+            if (root.left == null && root.right != null) {//Node co 1 cay con ben phai
+                return root.right;
+            }
+            //Node co 2 con->tim node trai cung ben phai thay the node tim duoc
+            Node mostLeftNode = findMostLeftNode(root.right);
+            root.value = mostLeftNode.value;
+            root.right = deleteNode(root.right, mostLeftNode.value);
+        }
+       return root;
+   }
 }
