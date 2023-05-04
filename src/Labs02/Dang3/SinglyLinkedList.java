@@ -86,18 +86,20 @@ public class SinglyLinkedList {
         System.out.println();
     }
 
-    public void displayHead() {
+    public Integer getHead() {
         if (isEmpty()){
             System.out.println("Singly Linked List is empty");
+            return null;
         } else{
-            System.out.println(head.value);
+            return head.value;
         }
     }
-    public void displayTail() {
+    public Integer getTail() {
         if (isEmpty()){
             System.out.println("Singly Linked List is empty");
+            return null;
         } else{
-            System.out.println(tail.value);
+            return tail.value;
         }
     }
 }

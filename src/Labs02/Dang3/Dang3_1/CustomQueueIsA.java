@@ -1,6 +1,6 @@
 package Labs02.Dang3.Dang3_1;
 
-import Labs02.Dang2.SinglyLinkedList;
+import Labs02.Dang3.SinglyLinkedList;
 
 public class CustomQueueIsA extends SinglyLinkedList {
     public CustomQueueIsA() {
@@ -12,14 +12,15 @@ public class CustomQueueIsA extends SinglyLinkedList {
     }
 
     //retrieves and removes the head of this queue
-    public void remove(){
-        displayHead();
+    public Integer remove(){
+        int data = getHead();
         deleteAtTop();
+        return data;
     }
 
     //retrieves but does not remove the head of this queue
-    public void element() {
-        displayHead();
+    public Integer element() {
+        return getHead();
     }
 
     public Boolean isEmpty() {

@@ -1,6 +1,6 @@
 package Labs02.Dang3.Dang3_2;
 
-import Labs02.Dang2.SinglyLinkedList;
+import Labs02.Dang3.SinglyLinkedList;
 
 public class CustomQueueHasA {
     private SinglyLinkedList singlyLinkedList = new SinglyLinkedList();
@@ -17,21 +17,24 @@ public class CustomQueueHasA {
     }
 
     //retrieves and removes the head of this queue
-    public void remove() {
+    public Integer remove() {
         if (singlyLinkedList.isEmpty()) {
             System.out.println("Queue is empty!");
+            return null;
         } else {
-            singlyLinkedList.displayHead();
+            int data = singlyLinkedList.getHead();
             singlyLinkedList.deleteAtTop();
+            return data;
         }
     }
 
     //retrieves but does not remove the head of this queue
-    public void element() {
+    public Integer element() {
         if (singlyLinkedList.isEmpty()) {
             System.out.println("Queue is empty!");
+            return null;
         } else {
-            singlyLinkedList.displayHead();
+            return singlyLinkedList.getHead();
         }
     }
 
@@ -53,9 +56,9 @@ public class CustomQueueHasA {
         customQueueHasA.add(2);
         customQueueHasA.add(3);
         customQueueHasA.display();
-        customQueueHasA.remove();
+        System.out.println(customQueueHasA.remove());;
         customQueueHasA.display();
-        customQueueHasA.element();
+        System.out.println(customQueueHasA.element());;
         customQueueHasA.display();
     }
 }

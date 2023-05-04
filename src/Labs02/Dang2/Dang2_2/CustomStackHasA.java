@@ -14,18 +14,20 @@ public class CustomStackHasA {
     }
 
     //retrieves and removes the head of this stack
-    public void pop() {
+    public Integer pop() {
         if (isEmpty()){
             System.out.println("Stack is empty!");
+            return null;
         } else {
-            singlyLinkedList.displayTail();
+            int data = singlyLinkedList.getTail();
             singlyLinkedList.deleteAtEnd();
+            return data;
         }
     }
 
     //retrieves but does not remove the head of this stack
-    public void peek() {
-        singlyLinkedList.displayTail();
+    public Integer peek() {
+        return singlyLinkedList.getTail();
     }
 
     public void display() {
@@ -48,10 +50,10 @@ public class CustomStackHasA {
         customStack.push(4);
         customStack.push(5);
         customStack.display();
-        customStack.pop();
-        customStack.pop();
-        customStack.pop();
-        customStack.peek();
+        System.out.println(customStack.pop());
+        System.out.println(customStack.pop());
+        System.out.println(customStack.pop());
+        System.out.println(customStack.peek());
         customStack.display();
     }
 }

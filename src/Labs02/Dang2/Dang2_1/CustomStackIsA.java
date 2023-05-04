@@ -12,23 +12,27 @@ public class CustomStackIsA extends SinglyLinkedList {
     }
 
     //retrieves and removes the head of this stack
-    public void pop() {
+    public Integer pop() {
         if (isEmpty()){
             System.out.println("Stack is empty!");
+            return null;
         } else {
-           displayTail();
+           int data = getTail();
            deleteAtEnd();
+           return data;
         }
     }
 
     // retrieves but does not remove the head of this stack
-    public void peek() {
+    public Integer peek() {
         if (isEmpty()){
             System.out.println("Stack is empty!");
+            return null;
         } else {
-            displayTail();
+            return getTail();
         }
     }
+
 
     public Integer getSize() {
         return getSize();
@@ -41,7 +45,7 @@ public class CustomStackIsA extends SinglyLinkedList {
     public static void main(String[] args) {
         CustomStackIsA customStackIsA = new CustomStackIsA();
         customStackIsA.push(0);
-        customStackIsA.peek();
+        System.out.println(customStackIsA.pop());
         System.out.println(customStackIsA.isEmpty());
     }
 }
