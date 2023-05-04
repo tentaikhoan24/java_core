@@ -1,20 +1,22 @@
 package Labs01.Dang7;
 
 public class QueueCustom {
-    private Integer[] arr = new Integer[5];
-    private Integer head = 0;
-    private Integer tail = 0;
+    private Integer length = 5;
+    private Integer[] arr = new Integer[length];
+    private Integer head = -1;
+    private Integer tail = -1;
 
     public QueueCustom() {}
 
     public void add(Integer value) {
         if (isEmpty()){
-            arr[head] = value;
-            tail = head;
+            arr[head+1] = value;
+            tail++;
+            head++;
         } else if (isFull()) {
             System.out.println("Queue is full!");
         } else {
-            arr[(tail+1)%5] = value;
+            arr[(tail+1)%length] = value;
             tail = tail +1;
         }
     }
@@ -25,10 +27,16 @@ public class QueueCustom {
             System.out.println("Queue is empty!");
             return null;
         } else {
-            head = head +1;
-            int data = arr[head -1];
-            arr[head-1] = null;
-            return data;
+            if (head%5 == tail%length){
+                int index = head%length;
+                head = -1;
+                tail = -1;
+                return arr[index];
+            } else {
+                int index = head%length;
+                head++;
+                return arr[index];
+            }
         }
     }
 
@@ -43,43 +51,38 @@ public class QueueCustom {
     }
 
     public Boolean isFull() {
-        int count = 0;
-        while (count < 5){
-            if (arr[count] == null){
-                return false;
-            }
-            count++;
+        if (head%length == 0 && tail%length == 4){
+            return true;
         }
-        return true;
+        if(head%5 > tail%length && tail%length-head%length == 1){
+            return true;
+        }
+        return false;
     }
     public Boolean isEmpty() {
-        int count = 0;
-        while (count < 5) {
-            if (arr[count] != null) {
-                return false;
-            }
-            count++;
+        if (head == -1 && tail == -1){
+            return  true;
         }
-        return true;
+        return false;
     }
 
     public static void main(String[] args) {
-    QueueCustom queueCustom = new QueueCustom();
-    queueCustom.add(1);
-    queueCustom.add(2);
-    queueCustom.add(3);
-    queueCustom.add(4);
-    queueCustom.add(5);
-    System.out.println("Head::"+ queueCustom.head%5);
-    System.out.println("Tail::"+ queueCustom.tail%5);
-    System.out.println(queueCustom.remove());
-    System.out.println(queueCustom.remove());
-    System.out.println(queueCustom.remove());
-    System.out.println(queueCustom.remove());
-    System.out.println("Head::"+ queueCustom.head%5);
-    System.out.println("Tail::"+ queueCustom.tail%5);
-    queueCustom.add(78);
-    System.out.println("Head::"+ queueCustom.head%5);
-    System.out.println("Tail::"+ queueCustom.tail%5);
+        QueueCustom queueCustom = new QueueCustom();
+        queueCustom.add(1);
+        queueCustom.add(2);
+        queueCustom.add(3);
+        queueCustom.add(4);
+        queueCustom.add(5);
+        System.out.println("Head::"+ queueCustom.head%5);
+        System.out.println("Tail::"+ queueCustom.tail%5);
+        System.out.println(queueCustom.remove());
+        System.out.println(queueCustom.remove());
+        System.out.println(queueCustom.remove());
+        System.out.println(queueCustom.remove());
+        System.out.println("Head::"+ queueCustom.head%5);
+        System.out.println("Tail::"+ queueCustom.tail%5);
+        queueCustom.add(78);
+        System.out.println("Head::"+ queueCustom.head%5);
+        System.out.println("Tail::"+ queueCustom.tail%5);
     }
 }
