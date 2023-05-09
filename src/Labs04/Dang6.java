@@ -28,7 +28,7 @@ public class Dang6 {
                 }
                 index++;
             }
-            if (arr1.length < arr2.length){
+            if (arr1.length <= arr2.length){
                 return true;
             } else {
                 return false;
