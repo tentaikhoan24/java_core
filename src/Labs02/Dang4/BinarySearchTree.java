@@ -77,4 +77,26 @@ public class BinarySearchTree {
         }
        return root;
    }
+
+    public static void main(String[] args) {
+        Node root = new Node(15);
+        BinarySearchTree binarySearchTree = new BinarySearchTree();
+        binarySearchTree.insert(root,10);
+        binarySearchTree.insert(root,30);
+        binarySearchTree.insert(root,7);
+        binarySearchTree.insert(root,14);
+        binarySearchTree.insert(root,20);
+        binarySearchTree.insert(root,40);
+        binarySearchTree.insert(root,9);
+        binarySearchTree.insert(root,13);
+        binarySearchTree.insert(root,28);
+        binarySearchTree.insert(root,35);
+        binarySearchTree.insert(root,8);
+        binarySearchTree.insert(root,12);
+        binarySearchTree.insert(root,29);
+        binarySearchTree.insert(root,38);
+        System.out.println("---");
+        binarySearchTree.deleteNode(root, 10);
+        System.out.println("---");
+    }
 }
