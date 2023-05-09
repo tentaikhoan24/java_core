@@ -21,12 +21,17 @@ public class Dang6 {
         } else {
             int index = 1;
             while (index < Math.min(arr1.length - 2, arr2.length - 2)){
-                if (arr1[index].compareTo(arr2[index]) < 0){// Kiểm tra họ
+                if (arr1[index].compareTo(arr2[index]) < 0){// Kiểm tên đệm
                     return true;
-                }else if (arr1[index].compareTo(arr2[index]) > 0) {//Kiểm tra họ
+                }else if (arr1[index].compareTo(arr2[index]) > 0) {//Kiểm tên đệm
                     return false;
                 }
                 index++;
+            }
+            if (arr1.length < arr2.length){
+                return true;
+            } else {
+                return false;
             }
         }
         return true;
@@ -42,7 +47,7 @@ public class Dang6 {
                 name[index] = line;
                 index ++;
             }
-            for (int i = 0; i < index - 1; i++) {
+            for (int i = 0; i < index-1 ; i++) {
                 for (int j = i +1; j < index; j++){
                     if (!compare(name[i], name[j])) {
                         String temp = name[i];
