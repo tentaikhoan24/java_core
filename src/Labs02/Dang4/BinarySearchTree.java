@@ -96,7 +96,7 @@ public class BinarySearchTree {
         binarySearchTree.insert(root,29);
         binarySearchTree.insert(root,38);
         System.out.println("---");
-        binarySearchTree.deleteNode(root, 10);
+        binarySearchTree.deleteNode(root, 15);
         System.out.println("---");
     }
 }

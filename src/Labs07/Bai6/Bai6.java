@@ -25,7 +25,7 @@ public class Bai6 {
         List<Transaction> bai6_2_1 = transactionList.stream().
                 filter(t -> t.getYear() == 2023)
                 .sorted(Comparator.comparing(Transaction::getAmount))
-                .toList();
+                .collect(Collectors.toList());
         System.out.println(bai6_2_1);
 
         //bai 6_2_2
@@ -47,7 +47,7 @@ public class Bai6 {
                 .map(Transaction::getCustomer)
                 .distinct()
                 .sorted(Comparator.comparing(Customer::getName))
-                .toList();
+                .collect(Collectors.toList());
         bai6_2_4.forEach(System.out::println);
 
         //bai 6_2_5
