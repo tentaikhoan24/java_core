@@ -6,7 +6,7 @@ import java.util.stream.Collectors;
 public class Bai6 {
     public static void main(String[] args) {
         List<Transaction> transactionList = new ArrayList<>();
-        Customer customer1 = new Customer("Nguyen Van A", "Hung Yen");
+        Customer customer1 = new Customer("Nguyen Van A", "Ha Noi");
         Customer customer2 = new Customer("Tran Thi B", "Ha Noi");
         Customer customer3 = new Customer("Hoang Manh C", "Ho Chi Minh");
         Customer customer4 = new Customer("Ta Thu D", "Da Nang");
