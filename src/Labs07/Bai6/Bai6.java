@@ -1,7 +1,7 @@
 package Labs07.Bai6;
 
 import java.util.*;
-import java.util.stream.Collectors;
+import java.util.stream.*;
 
 public class Bai6 {
     public static void main(String[] args) {

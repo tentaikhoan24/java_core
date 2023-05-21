@@ -1,0 +1,5 @@
+list: biểu diễn 1 bộ sưu tập đc đánh chỉ so a0, a1...an->get(i) set(i, obj) remove(i) indexOf(obj) listIterator(/i/)
+	-contain->Comparable-> boolean equals
+	- sx->Comparable->implments->compareTo
+		->Comparator->implments-->compare(obj1, ->(list, new TComparator())
+Iterator -> nextIndex hasPrevious previous previousIndex add(obj) set(obj)
