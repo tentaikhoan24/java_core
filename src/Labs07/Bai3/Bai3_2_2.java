@@ -2,6 +2,7 @@ package Labs07.Bai3;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.stream.Collectors;
 
 public class Bai3_2_2 {
     public static void main(String[] args) {
@@ -11,10 +12,7 @@ public class Bai3_2_2 {
         list.add(new Product(3, "samsung", 121f));
         list.add(new Product(4, "nokia", 120f));
 
-        List<Float> floatList = list.stream().filter(p -> p.price < 130).map(Product::getPrice).toList();
-        System.out.println(floatList);
-
-        List<Float> floatList1 = list.stream().filter(p -> p.price < 130).map(p -> p.price).toList();
+        List<Float> floatList1 = list.stream().filter(p -> p.price < 130).map(p -> p.price).collect(Collectors.toList());
         System.out.println(floatList1);
 
     }

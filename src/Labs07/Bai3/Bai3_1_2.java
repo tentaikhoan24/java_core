@@ -1,7 +1,6 @@
 package Labs07.Bai3;
 
-import java.util.ArrayList;
-import java.util.List;
+import java.util.*;
 import java.util.stream.Collectors;
 
 public class Bai3_1_2 {
@@ -12,7 +11,7 @@ public class Bai3_1_2 {
         list.add(new Product(3, "samsung", 121f));
         list.add(new Product(4, "nokia", 120f));
 
-        List<Float> floatList1 = list.stream().filter(p -> p.price < 130).map(p -> p.price).toList();
+        List<Float> floatList1 = list.stream().filter(p -> p.price < 130).map(p -> p.price).collect(Collectors.toList());
         System.out.println(floatList1);
     }
 }
